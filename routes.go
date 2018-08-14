@@ -8,7 +8,6 @@ import (
 var DB = make(map[string]string)
 
 func ping(c *gin.Context) {
-	fmt.Printf("Hello")
 	c.String(200, "pong")
 }
 

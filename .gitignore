@@ -15,3 +15,5 @@ myapp
 filmfinder
 vendor/*
 !vendor/vendor.json
+
+.env

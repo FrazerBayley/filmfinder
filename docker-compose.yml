@@ -1,0 +1,23 @@
+version: '3'
+services:
+  filmfinder:
+    container_name: filmfinder
+    restart: always
+    build: .
+    # image: ${filmfinder_image}
+    ports:
+      - '8080:8080'
+
+  postgres:
+    container_name: postgres
+    restart: always
+    image: postgres:9.6-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: '${POSTGRES_DB_USERNAME}'
+      POSTGRES_PASSWORD: '${POSTGRES_DB_PASSWORD}'
+    volumes:
+      - ./database:/var/lib/postgresql
+
+# sudo docker-compose -f docker-compose.yml up
